@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.howe.ujs.dao.TbconcentratorMapper">
+  <resultMap id="BaseResultMap" type="cn.howe.ujs.model.Tbconcentrator">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="CHAR" property="id" />
+    <result column="RouteID" jdbcType="INTEGER" property="routeid" />
+    <result column="Version" jdbcType="VARCHAR" property="version" />
+    <result column="Name" jdbcType="VARCHAR" property="name" />
+    <result column="Password" jdbcType="VARCHAR" property="password" />
+    <result column="Longitude" jdbcType="DECIMAL" property="longitude" />
+    <result column="Laitude" jdbcType="DECIMAL" property="laitude" />
+    <result column="APNType" jdbcType="TINYINT" property="apntype" />
+    <result column="LongPassWay" jdbcType="TINYINT" property="longpassway" />
+    <result column="LongPassProtocol" jdbcType="TINYINT" property="longpassprotocol" />
+    <result column="UpInterval" jdbcType="TINYINT" property="upinterval" />
+    <result column="UpDelay" jdbcType="TINYINT" property="updelay" />
+    <result column="UpRepeat" jdbcType="TINYINT" property="uprepeat" />
+    <result column="UpDelayAdmin" jdbcType="TINYINT" property="updelayadmin" />
+    <result column="IPProject" jdbcType="VARCHAR" property="ipproject" />
+    <result column="PortProject" jdbcType="VARCHAR" property="portproject" />
+    <result column="Encryption" jdbcType="TINYINT" property="encryption" />
+    <result column="KeyProject" jdbcType="VARCHAR" property="keyproject" />
+    <result column="EncryptionAdmin" jdbcType="TINYINT" property="encryptionadmin" />
+    <result column="KeyAdmin" jdbcType="VARCHAR" property="keyadmin" />
+    <result column="HeartBeat" jdbcType="TINYINT" property="heartbeat" />
+    <result column="HeartBeatMin" jdbcType="TINYINT" property="heartbeatmin" />
+    <result column="IPAdmin" jdbcType="VARCHAR" property="ipadmin" />
+    <result column="PortAdmin" jdbcType="VARCHAR" property="portadmin" />
+    <result column="IPWay" jdbcType="TINYINT" property="ipway" />
+    <result column="IP" jdbcType="VARCHAR" property="ip" />
+    <result column="Mask" jdbcType="VARCHAR" property="mask" />
+    <result column="Gateway" jdbcType="VARCHAR" property="gateway" />
+    <result column="DNS" jdbcType="VARCHAR" property="dns" />
+    <result column="ReservePassword" jdbcType="VARCHAR" property="reservepassword" />
+    <result column="SystemControlMode" jdbcType="TINYINT" property="systemcontrolmode" />
+    <result column="PartsEnableState" jdbcType="TINYINT" property="partsenablestate" />
+    <result column="CircuitState" jdbcType="TINYINT" property="circuitstate" />
+    <result column="CollectTimeInterval" jdbcType="INTEGER" property="collecttimeinterval" />
+    <result column="ABaudRate" jdbcType="TINYINT" property="abaudrate" />
+    <result column="ADataBit" jdbcType="TINYINT" property="adatabit" />
+    <result column="AStopBit" jdbcType="TINYINT" property="astopbit" />
+    <result column="AParityBit" jdbcType="TINYINT" property="aparitybit" />
+    <result column="BBaudRate" jdbcType="TINYINT" property="bbaudrate" />
+    <result column="BDataBit" jdbcType="TINYINT" property="bdatabit" />
+    <result column="BStopBit" jdbcType="TINYINT" property="bstopbit" />
+    <result column="BParityBit" jdbcType="TINYINT" property="bparitybit" />
+    <result column="PhoneSum" jdbcType="INTEGER" property="phonesum" />
+    <result column="PhoneNumber1" jdbcType="VARCHAR" property="phonenumber1" />
+    <result column="PhoneNumber2" jdbcType="VARCHAR" property="phonenumber2" />
+    <result column="ControllerAmount" jdbcType="INTEGER" property="controlleramount" />
+    <result column="Location" jdbcType="VARCHAR" property="location" />
+    <result column="Remarks" jdbcType="VARCHAR" property="remarks" />
+    <result column="ChannelNum" jdbcType="INTEGER" property="channelnum" />
+  </resultMap>
+</mapper>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.howe.ujs.dao.TbcircuitMapper">
+  <resultMap id="BaseResultMap" type="cn.howe.ujs.model.Tbconcentratorcircuit">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="IDNum" jdbcType="INTEGER" property="idnum" />
+    <result column="Name" jdbcType="VARCHAR" property="name" />
+    <result column="ConcentratorID" jdbcType="CHAR" property="concentratorid" />
+  </resultMap>
+
+  <resultMap id="idAndName" type="map">
+    <id column="ID" jdbcType="INTEGER" property="circuitId" />
+    <result column="Name" jdbcType="VARCHAR" property="circuitName" />
+  </resultMap>
+
+  <!--根据id列表批量查询-->
+  <select id="findCircuitByIds" resultMap="idAndName">
+    SELECT ID,Name from tbconcentratorcircuit
+    WHERE ConcentratorID in
+    <foreach collection="concentratorIds" item="dramaId" open="(" close=")" separator=",">
+      #{dramaId}
+    </foreach>
+  </select>
+
+  <!--根据id查询集中器id-->
+  <select id="findConcentratorIdById" parameterType="int" resultType="string">
+    SELECT ConcentratorID FROM tbconcentratorcircuit WHERE ID = #{id}
+  </select>
+</mapper>

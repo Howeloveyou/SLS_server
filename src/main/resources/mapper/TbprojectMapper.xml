@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.howe.ujs.dao.TbprojectMapper">
+  <resultMap id="BaseResultMap" type="cn.howe.ujs.model.Tbproject">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="Name" jdbcType="VARCHAR" property="name" />
+    <result column="ContactPersonID" jdbcType="INTEGER" property="contactpersonid" />
+    <result column="CountyID" jdbcType="INTEGER" property="countyid" />
+    <result column="CreateTime" jdbcType="TIMESTAMP" property="createtime" />
+  </resultMap>
+</mapper>

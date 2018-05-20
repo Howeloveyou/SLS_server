@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.howe.ujs.dao.TbcontrollerMapper">
+  <resultMap id="BaseResultMap" type="cn.howe.ujs.model.Tbcontroller">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="CHAR" property="id" />
+    <result column="Number" jdbcType="INTEGER" property="number" />
+    <result column="Name" jdbcType="VARCHAR" property="name" />
+    <result column="Longitude" jdbcType="DECIMAL" property="longitude" />
+    <result column="Laitude" jdbcType="DECIMAL" property="laitude" />
+    <result column="TypeID" jdbcType="INTEGER" property="typeid" />
+    <result column="LampTypeID" jdbcType="INTEGER" property="lamptypeid" />
+    <result column="RouteID" jdbcType="INTEGER" property="routeid" />
+    <result column="ConcentratorID" jdbcType="CHAR" property="concentratorid" />
+    <result column="ConcentratorCircuitID" jdbcType="INTEGER" property="concentratorcircuitid" />
+    <result column="RenewTime" jdbcType="TIMESTAMP" property="renewtime" />
+    <result column="Remarks" jdbcType="INTEGER" property="remarks" />
+    <result column="Location" jdbcType="VARCHAR" property="location" />
+    <result column="Oma" jdbcType="DECIMAL" property="oma" />
+    <result column="MaxCurrent" jdbcType="DECIMAL" property="maxcurrent" />
+    <result column="MaxOma" jdbcType="DECIMAL" property="maxoma" />
+    <result column="IsRegist" jdbcType="INTEGER" property="isregist" />
+  </resultMap>
+
+  <resultMap id="idAndName" type="map">
+    <id column="ID" jdbcType="CHAR" property="controllerId" />
+    <result column="Name" jdbcType="VARCHAR" property="controllerName" />
+  </resultMap>
+
+  <!--根据id列表批量查询-->
+  <select id="findControllerByIds" resultMap="idAndName">
+    SELECT tbcontroller.ID,tbcontroller.NAME FROM tbcontroller
+    INNER JOIN tbcontroller2group ON tbcontroller.ID = tbcontroller2group.ControllerID
+    WHERE ConcentratorCircuitGroupID IN
+    <foreach collection="groupIds" item="dramaId" open="(" close=")" separator=",">
+      #{dramaId}
+    </foreach>
+  </select>
+  
+  <!--根据id查询集中器id-->
+  <select id="findConcentratorIdById" parameterType="string" resultType="string">
+    SELECT ConcentratorID FROM tbcontroller WHERE ID = #{id}
+  </select>
+</mapper>

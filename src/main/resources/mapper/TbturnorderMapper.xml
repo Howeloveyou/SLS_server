@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.howe.ujs.dao.TbturnorderMapper">
+  <resultMap id="BaseResultMap" type="cn.howe.ujs.model.Tbturnorder">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="OrderType" jdbcType="VARCHAR" property="ordertype" />
+    <result column="OnOrOFFType" jdbcType="INTEGER" property="onorofftype" />
+    <result column="OrderTime" jdbcType="TIMESTAMP" property="ordertime" />
+    <result column="Lumalevel" jdbcType="TINYINT" property="lumalevel" />
+    <result column="DeviceTypeID" jdbcType="INTEGER" property="devicetypeid" />
+    <result column="DeviceID" jdbcType="CHAR" property="deviceid" />
+    <result column="UserID" jdbcType="INTEGER" property="userid" />
+    <result column="ConcentratorID" jdbcType="CHAR" property="concentratorid" />
+  </resultMap>
+</mapper>

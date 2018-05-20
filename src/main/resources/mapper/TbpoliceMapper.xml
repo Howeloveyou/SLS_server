@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.howe.ujs.dao.TbpoliceMapper">
+  <resultMap id="BaseResultMap" type="cn.howe.ujs.model.Tbpolice">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="GroupID" jdbcType="INTEGER" property="groupid" />
+    <result column="Calendar" jdbcType="INTEGER" property="calendar" />
+    <result column="Cycle" jdbcType="INTEGER" property="cycle" />
+    <result column="onAbsoluteTime" jdbcType="INTEGER" property="onabsolutetime" />
+    <result column="OnVehicle" jdbcType="INTEGER" property="onvehicle" />
+    <result column="OnLuma" jdbcType="INTEGER" property="onluma" />
+    <result column="StartMonth" jdbcType="INTEGER" property="startmonth" />
+    <result column="EndMonth" jdbcType="INTEGER" property="endmonth" />
+    <result column="OnMonth" jdbcType="INTEGER" property="onmonth" />
+    <result column="OnDay" jdbcType="INTEGER" property="onday" />
+    <result column="onAbsolute" jdbcType="INTEGER" property="onabsolute" />
+    <result column="OnTime" jdbcType="TIME" property="ontime" />
+    <result column="offAbsoluteTime" jdbcType="INTEGER" property="offabsolutetime" />
+    <result column="OffMonth" jdbcType="INTEGER" property="offmonth" />
+    <result column="OffDay" jdbcType="INTEGER" property="offday" />
+    <result column="offAbsolute" jdbcType="INTEGER" property="offabsolute" />
+    <result column="OffTime" jdbcType="TIME" property="offtime" />
+    <result column="Lumalevel" jdbcType="TINYINT" property="lumalevel" />
+  </resultMap>
+  
+  <select id="getCycleNameById" resultType="string">
+    SELECT Type FROM tbcycle WHERE ID=#{id}
+  </select>
+
+  <select id="getCalendarNameById" resultType="string">
+    SELECT Type FROM tbcalendar WHERE ID=#{id}
+  </select>
+</mapper>
